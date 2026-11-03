@@ -8,14 +8,14 @@ const products = [
     title: "Aalto Stool 60 — Linoleum Black",
     estimate: "$335",
     ask: "$220",
-    images: ["https://ryo.lu/sale-photos/aalto-stool-60-linoleum-black.png"],
+    images: ["images/stool.jpg"],
   },
   {
     category: "ELECTRONICS",
     title: "Custom Gaming PC",
     estimate: "$4,299",
     ask: "$2,500",
-    images: ["https://ryo.lu/sale-photos/custom-gaming-pc.jpg"],
+    images: ["images/pc.jpeg"],
     sold: true,
   },
 ];
