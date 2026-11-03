@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Garage Sale</title>
+  <meta name="description" content="Garage sale items available for local pickup." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="en page">
+    <header class="big sale-header"><span>Garage Sale</span></header>
+    <main class="small sale" id="sale">
+      <p id="sale-status" class="sale-status" role="status"></p>
+      <p class="sale-intro">Items for sale. Click any photo to view its gallery.</p>
+      <ul class="sale-grid" id="sale-grid" aria-live="polite"></ul>
+    </main>
+  </div>
+
+  <div class="sale-reserve-bar" id="reserve-bar" hidden>
+    <div><span id="reserve-count">0 items added</span><span class="sale-reserve-bar-total" id="reserve-total">$0</span></div>
+    <button type="button" id="reserve-continue">continue</button>
+  </div>
+
+  <div class="sale-reserve-layer" id="reserve-layer" role="dialog" aria-modal="true" aria-labelledby="reserve-title" hidden>
+    <button class="sale-reserve-backdrop" type="button" aria-label="Close reserve form" data-close-reserve></button>
+    <section class="sale-reserve-sheet">
+      <header class="sale-reserve-sheet-head"><h2 id="reserve-title">reserve pickup</h2><button class="sale-reserve-cancel" type="button" data-close-reserve>cancel</button></header>
+      <ul class="sale-reserve-items" id="reserve-items"></ul>
+      <form class="sale-reserve-form" id="reserve-form">
+        <label><span>email</span><input type="email" required /></label>
+        <label><span>name</span><input type="text" required /></label>
+        <fieldset><legend>pickup date</legend><div class="sale-chip-row sale-chip-row--dates" id="date-chips"></div></fieldset>
+        <fieldset><legend>window</legend><div class="sale-chip-row" id="window-chips"></div></fieldset>
+        <div class="sale-reserve-actions"><p class="sale-reserve-error" id="reserve-status" hidden>request ready</p><button class="sale-reserve-cancel" type="button" data-close-reserve>cancel</button><button class="sale-reserve-submit" type="submit">send request</button></div>
+      </form>
+    </section>
+  </div>
+
+  <div class="sale-lightbox" id="sale-lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+    <button class="sale-lightbox-backdrop" type="button" aria-label="Close image gallery" data-close-lightbox></button>
+    <div class="sale-lightbox-content">
+      <button class="sale-lightbox-close" type="button" aria-label="Close image gallery" data-close-lightbox>close</button>
+      <button class="sale-lightbox-nav sale-lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">←</button>
+      <figure class="sale-lightbox-figure"><img id="lightbox-image" src="" alt="" /><figcaption id="lightbox-title"></figcaption></figure>
+      <button class="sale-lightbox-nav sale-lightbox-next" id="lightbox-next" type="button" aria-label="Next image">→</button>
+    </div>
+  </div>
+
+  <button class="scroll-to-top" type="button" id="scroll-to-top" aria-label="Scroll to top">↑</button>
+  <script src="./script.js"></script>
+</body>
+</html>
